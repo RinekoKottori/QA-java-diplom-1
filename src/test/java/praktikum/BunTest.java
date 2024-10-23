@@ -3,6 +3,7 @@ package praktikum;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static praktikum.Constants.DELTA;
 
 
 public class BunTest {
@@ -18,6 +19,6 @@ public class BunTest {
     public void getPrice() {
         Database data = new Database();
         Bun bun = new Bun(data.availableBuns().get(2).name, data.availableBuns().get(2).price);
-        assertEquals("Bun price should be: \"300\"", 300, bun.getPrice(), 0.01F);
+        assertEquals("Bun price should be: \"300\"", 300, bun.getPrice(), DELTA);
     }
 }

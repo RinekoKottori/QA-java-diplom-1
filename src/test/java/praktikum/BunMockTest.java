@@ -8,6 +8,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
+import static praktikum.Constants.DELTA;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BunMockTest {
@@ -24,7 +25,7 @@ public class BunMockTest {
     @Test //проверка метода на получение цены
     public void getPrice() {
         when(bun.getPrice()).thenReturn(1000F);
-        assertEquals("Bun price should be: \"1000\"", 1000F, bun.getPrice(), 0.01F);
+        assertEquals("Bun price should be: \"1000\"", 1000F, bun.getPrice(), DELTA);
         Mockito.verify(bun, Mockito.times(1)).getPrice();
     }
 }

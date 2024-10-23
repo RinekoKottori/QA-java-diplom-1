@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import static org.junit.Assert.assertEquals;
+import static praktikum.Constants.DELTA;
 
 @RunWith(Parameterized.class)
 public class IngredientTest {
@@ -34,7 +35,7 @@ public class IngredientTest {
     @Test //проверка корректности получения цены каждого ингредиента
     public void getPrice() {
         Ingredient ingredient = new Ingredient(type, name, price);
-        assertEquals(price, ingredient.getPrice(), 0.01);
+        assertEquals(price, ingredient.getPrice(), DELTA);
     }
 
     @Test //проверка корректности получения названия каждого ингредиента
